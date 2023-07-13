@@ -1,0 +1,22 @@
+---
+permalink: concept-unsupported-workflows.html 
+sidebar: sidebar 
+keywords: unsupported, workflows 
+summary: 不支援的工作流程 
+---
+= 不支援的工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+BlueXP 備份與還原 VM 1.0 版本不支援下列工作流程：
+
+* 連接並卸除VMDK
+* 掛載及卸載資料存放區
+* 還原來賓檔案和資料夾
+* 還原至替代位置
+* 使用「憑證」驗證方法新增儲存系統
+* 新增 NetApp ONTAP FlexGroup Volume
+

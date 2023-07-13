@@ -1,0 +1,47 @@
+---
+permalink: task-download-the-open-virtual-appliance.html 
+sidebar: sidebar 
+keywords: download, open virtual appliance 
+summary: 安裝開放式虛擬設備（OVA）之前、請先將憑證新增至vCenter。tar檔案包含OVA及Entrust根憑證及中繼憑證、可在「憑證」資料夾中找到這些憑證。VMware vCenter 8.0 以上版本支援 OVA 部署。 
+---
+= 下載開放式虛擬應用裝置（OVA）
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝開放式虛擬設備（OVA）之前、請先將憑證新增至vCenter。。 `.tar` 檔案包含 OVA 和 Entrust 根憑證和中繼憑證、您可以在憑證資料夾中找到憑證。VMware vCenter 8.0 以上版本支援 OVA 部署。
+
+如果信任憑證簽署的 OVA 不受信任、您必須執行下列程序才能解決問題。
+
+.步驟
+. 若要下載 BlueXP 備份與還原 VM OVA ：
++
+** 登入 https://mysupport.netapp.com/products/index.html["NetApp 支援網站"^]
+** 從產品清單中、選取 * BlueXP 虛擬機器備份與還原 * 、然後按一下 * 下載最新版本 * 按鈕。
+** 下載適用於 VM 的 BlueXP 備份與還原 `.tar` 檔案至任何位置。
+
+
+. 擷取tar檔案的內容。tar檔案包含OVA和certs資料夾。「認證」資料夾包含「EntTrust根憑證」和「中介憑證」。
+. 使用 vSphere Client 認證登入 AWS 上的 VMC 。
+. 瀏覽至功能表：管理 [ 憑證 > 憑證管理 ] 。
+. 在 * 信任的根憑證 * 旁邊、按一下 * 新增 * 。
++
+** 移至 Certs 資料夾。
+** 選取「Entrust根憑證」和「中介憑證」。
+** 一次安裝一個憑證。
+
+
+. 憑證會新增至「信任的根憑證」下的面板。
++
+安裝憑證後、即可驗證及部署OVA。
+
+
+
+[NOTE]
+====
+如果下載的 OVA 未遭竄改、則「發行者」欄會顯示「信任的憑證」。
+
+====

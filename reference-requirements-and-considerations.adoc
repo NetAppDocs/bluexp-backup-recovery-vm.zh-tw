@@ -1,0 +1,34 @@
+---
+permalink: reference-requirements-and-considerations.html 
+sidebar: sidebar 
+keywords: requirements, considerations 
+summary: 在為 VM 使用 BlueXP 備份與還原之前、您必須瞭解多項需求與考量。 
+---
+= 要求與考量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在為 VM 使用 BlueXP 備份與還原之前、您必須瞭解多項需求與考量：
+
+* 無論您是使用外掛程式來保護 Windows 系統或 Linux 系統上的資料、虛擬機器的 BlueXP 備份與還原都會部署為 Linux VM 。
+* 您應該在 AWS 上的 VMC 上部署 BlueXP 備份與還原以供虛擬機器使用。
++
+虛擬機器和 VMC 的 BlueXP 備份與還原應使用相同的時區。備份排程是在部署 BlueXP 虛擬機器備份與還原的時區執行。VMC 會報告 VMC 所在時區的資料。因此、如果 VM 和 VMC 的 BlueXP 備份與還原位於不同的時區、則 BlueXP 備份與 VM 儀表板的還原資料可能與報告中的資料不同。
+
+* 您不得將 BlueXP 備份與還原部署在名稱含有特殊字元的資料夾中、以供虛擬機器使用。
++
+資料夾名稱不應包含下列特殊字元：$!@#%^&()_+{}';.,*?<>|
+
+* 您必須為 AWS 上的每個 VMC 部署和登錄一個獨立的獨特 BlueXP 備份和還原執行個體。
++
+** AWS 上的每個 VMC 都應與個別的 BlueXP 備份和恢復 VM 執行個體配對。
+** 每個 VM BlueXP 備份與還原執行個體都必須部署為獨立的 Linux VM 。
++
+例如、如果您想要在 AWS 上執行六個不同 VMC 執行個體的備份、則必須在六個主機上部署六個 BlueXP 備份和還原、而且 AWS 上的每個 VMC 都必須與一個獨特的 BlueXP 備份和還原 VM 執行個體配對。
+
+
+
+

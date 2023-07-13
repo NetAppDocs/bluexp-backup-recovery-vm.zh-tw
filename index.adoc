@@ -1,0 +1,15 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+permalink: index.html 
+summary: 適用於 Amazon FSX 上虛擬機器的 BlueXP 備份與還原。 
+---
+= BlueXP 虛擬機器備份與還原文件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+

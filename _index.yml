@@ -1,0 +1,29 @@
+---
+indexpage:
+  lead: BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開放式虛擬應用裝置格式）、可為 AWS 上的 VMware Cloud 上的虛擬機器和資料存放區、以及適用於
+    NetApp ONTAP 的 Amazon FSX 提供資料保護服務。
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 瞭解適用於 VM 的 BlueXP 備份與還原
+      url: concept-bluexp-backup-and-recovery-for-virtual-machines-on-amazon-fsx.html
+    - title: 不支援的工作流程
+      url: concept-unsupported-workflows.html
+  - title: 為 VM 部署 BlueXP 備份與還原
+    links:
+    - title: 下載 OVA
+      url: task-download-the-open-virtual-appliance.html
+    - title: 為 VM 部署 BlueXP 備份與還原
+      url: task-deploy-bluexp-backup-and-recovery-for-vms.html
+  - title: 為 VM 使用 BlueXP 備份與還原
+    links:
+    - title: 新增儲存設備
+      url: task-add-storage.html
+    - title: 建立備份原則
+      url: task-create-backup-policies-for-vms-and-datastores.html
+    - title: 建立資源群組
+      url: task-create-resource-groups.html
+    - title: 隨需備份資源群組
+      url: task-back-up-resource-groups-on-demand.html
+    - title: 從 Amazon FSX 還原虛擬機器
+      url: task-restore-virtual-machines-from-amazon-fsx.html

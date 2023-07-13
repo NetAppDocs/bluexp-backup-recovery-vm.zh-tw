@@ -1,0 +1,28 @@
+---
+permalink: whats-new.html 
+sidebar: sidebar 
+keywords: 2-node switched Cisco 92300YC cluster switch migration 
+summary: 瞭解 BlueXP 虛擬機器備份與還原的新功能。 
+---
+= BlueXP 虛擬機器備份與還原的新功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解 BlueXP 虛擬機器備份與還原的新功能。
+
+
+
+== 2023 年 7 月 13 日
+
+
+
+=== BlueXP VM 1.0 的備份與還原現在已成為 GA
+
+您可以使用 BlueXP 備份與還原來保護虛擬機器上的資料。您可以備份 Amazon FSX 上的資料存放區、並將虛擬機器還原至其原始位置。
+
+此解決方案專供 VMware Cloud 上的虛擬機器和資料存放區使用、適用於 AWS 和 Amazon FSX for NetApp ONTAP 。
+
+link:concept-bluexp-backup-and-recovery-for-virtual-machines-on-amazon-fsx.html["適用於 Amazon FSX 上虛擬機器的 BlueXP 備份與還原"]
