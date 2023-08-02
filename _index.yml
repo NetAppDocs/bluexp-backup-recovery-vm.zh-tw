@@ -27,3 +27,11 @@ indexpage:
       url: task-back-up-resource-groups-on-demand.html
     - title: 從 Amazon FSX 還原虛擬機器
       url: task-restore-virtual-machines-from-amazon-fsx.html
+  - title: 示範與教學課程
+    links:
+    - title: 為 VM 安裝 BlueXP 備份與還原
+      url: https://www.youtube.com/watch?v=kCuKY0fBf5U
+    - title: 備份 ONTAP 資料存放區和 VM 的 FSX
+      url: https://www.youtube.com/watch?v=cLWOFm_3g3U
+    - title: 還原 ONTAP 資料存放區 VM 和 VMDK 的 FSX
+      url: https://www.youtube.com/watch?v=RVLYP0lguxkM
