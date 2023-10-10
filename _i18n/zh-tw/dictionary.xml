@@ -89,7 +89,6 @@ Snapshot標籤有助於區分使用此原則建立的Snapshot與次要儲存系�
   <block id="1ac228dd82997c534998d8c776a81009" category="list-text">您必須擁有具有有效公開金鑰和私密金鑰檔案的憑證。如需詳細資訊、請參閱儲存憑證管理一節中的文章。</block>
   <block id="78dd2db401a1c567e4094c34da3d53e3" category="list-text">您必須登出並關閉 vSphere 用戶端的所有瀏覽器工作階段、並刪除瀏覽器快取、以避免在部署虛擬機器的 BlueXP 備份與還原期間發生瀏覽器快取問題。</block>
   <block id="8ba7fa3d7ed705b172a2802a36085538" category="list-text">您必須在vCenter中啟用傳輸層安全性（TLS）。請參閱VMware文件。</block>
-  <block id="d706d30254764a674cce32eb658463b4" category="paragraph">在與 vCenter 相同的時區中部署虛擬機器的 BlueXP 備份與還原。</block>
   <block id="60fef4f382ecd40d07aa6f5d88accaa7" category="list-text">對於 VMware vCenter 7.0.3 及更新版本、請依照「下載開放式虛擬應用裝置（ OVA ）」一節中的步驟、將憑證匯入 vCenter 。</block>
   <block id="9e6343514537d0d6a99bafe616c5aa86" category="list-text">在瀏覽器中、瀏覽至VMware vSphere vCenter。</block>
   <block id="a5bc2dcdf45e4e981e8c5477447aa605" category="list-text">登入* VMware vCenter單一登入頁面*。</block>
@@ -453,4 +452,8 @@ Snapshot標籤有助於區分使用此原則建立的Snapshot與次要儲存系�
   <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">取得雲端供應商檔案服務的支援</block>
   <block id="f6185bb12f5e53c800be8cda7fbca65b" category="paragraph">如需雲端供應商檔案服務、其基礎架構或任何使用服務的解決方案的相關技術支援、請參閱該產品的 BlueXP 文件中的「取得說明」。</block>
   <block id="3880ae5df9fdc4d0fc4a6d00a2239530" category="paragraph">若要獲得 BlueXP 及其儲存解決方案與服務的專屬技術支援、請使用下列支援選項。</block>
+  <block id="f8c50cec8b281b2a3e589464e5dfba35" category="list-text">在 vmc.vmware.com 主控台上、開啟防火牆連接埠、讓運算閘道公用 IP 透過 TCP 443 與管理網路上的 vCenter 進行通訊。</block>
+  <block id="6bfaca7cf08b162bbacdc9479a2ca693" category="list-text">在 AWS 主控台上、您必須更新執行 FSX for ONTAP 的 VPC 安全性群組、以允許虛擬機器進行 BlueXP 備份與還原、存取適用於 ONTAP 的 FSX 。</block>
+  <block id="852604ac38f959dae2ec3b3009d3fc07" category="paragraph">若要保護虛擬機器上的 VM 和資料存放區、您必須為 VM 部署 BlueXP 備份和還原。</block>
+  <block id="ebfc4f565cf4b541e8d94e4baad23f9f" category="list-text">您必須將 BlueXP 備份與還原部署在與 vCenter 相同的時區中、以供虛擬機器使用。</block>
 </blocks>

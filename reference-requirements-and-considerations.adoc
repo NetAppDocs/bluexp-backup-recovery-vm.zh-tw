@@ -31,4 +31,6 @@ summary: 在為 VM 使用 BlueXP 備份與還原之前、您必須瞭解多項�
 
 
 
+* 在 vmc.vmware.com 主控台上、開啟防火牆連接埠、讓運算閘道公用 IP 透過 TCP 443 與管理網路上的 vCenter 進行通訊。
+* 在 AWS 主控台上、您必須更新執行 FSX for ONTAP 的 VPC 安全性群組、以允許虛擬機器進行 BlueXP 備份與還原、存取適用於 ONTAP 的 FSX 。
 
