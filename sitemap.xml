@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/concept-bluexp-backup-and-recovery-for-virtual-machines-on-amazon-fsx.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/concept-unsupported-workflows.html</loc>
+        
+      
+      <lastmod>2023-07-13T18:47:08+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/</loc>
+        
+      
+      <lastmod>2023-07-13T18:47:08+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/legal-notices.html</loc>
+        
+      
+      <lastmod>2023-09-28T16:11:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/reference-requirements-and-considerations.html</loc>
+        
+      
+      <lastmod>2023-10-10T13:49:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/reference-limitations.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm//search.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:19+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-access-rest-apis.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-add-storage.html</loc>
+        
+      
+      <lastmod>2023-07-13T18:47:08+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-attach-vmdks-vm.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-back-up-resource-groups-on-demand.html</loc>
+        
+      
+      <lastmod>2023-07-13T18:47:08+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-create-backup-policies-for-vms-and-datastores.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-create-resource-groups.html</loc>
+        
+      
+      <lastmod>2023-07-13T18:47:08+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-deploy-bluexp-backup-and-recovery-for-vms.html</loc>
+        
+      
+      <lastmod>2023-10-10T13:49:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-detach-virtual-disks.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-download-the-open-virtual-appliance.html</loc>
+        
+      
+      <lastmod>2023-08-02T10:20:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-get-help.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-mount-datastores.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-restore-virtual-machines-from-amazon-fsx.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-support-registration.html</loc>
+        
+      
+      <lastmod>2023-10-04T18:15:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/task-unmount-datastores.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery-vm/whats-new.html</loc>
+        
+      
+      <lastmod>2024-01-19T03:31:03+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
