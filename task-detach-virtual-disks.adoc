@@ -1,0 +1,35 @@
+---
+permalink: task-detach-virtual-disks.html 
+sidebar: sidebar 
+keywords: mount, datastores 
+summary: 將一個以上的 VMDK 附加到 VM 。 
+---
+= 分離虛擬磁碟
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+附加虛擬磁碟以還原個別檔案之後、即可將虛擬磁碟與父VM分離。
+
+.步驟
+. 在 VMware vSphere 用戶端中、瀏覽至 image:menu_icon.png[""] > * 庫存 * > * 主機與叢集 * 。
+. 在左側瀏覽器窗格中，右鍵單擊 * 虛擬機 * ，然後在下拉列表中選擇 * BlueXP 虛擬機的備份和恢復 * ，然後選擇 * 分離虛擬磁盤 * 。
+. 在 *Detach Virtual Disk* （分離虛擬磁盤 * ）對話框中，選擇一個或多個要分離的磁盤，然後選中 *Detach the selected disk(s)* （分離選定的磁盤 * ）複選框，然後單擊 *Detach* （分離 * ）。
+. 選用：在「*近期工作*」區段中監控作業進度。
++
+重新整理畫面以顯示更新的資訊。
+
+. 執行下列步驟、確認虛擬磁碟已分離：
++
+.. 按一下工具列中的*功能表*、然後從下拉式清單中選取* VM和範本*。
+.. 在左側導覽器窗格中、以滑鼠右鍵按一下VM、然後在下拉式清單中選取*編輯設定*。
+.. 在*編輯設定*視窗中、展開每個硬碟的清單以查看磁碟檔案清單。
++
+「編輯設定」頁面會列出VM上的磁碟。您可以展開每個硬碟的詳細資料、以查看附加虛擬磁碟的清單。
+
+
+
+

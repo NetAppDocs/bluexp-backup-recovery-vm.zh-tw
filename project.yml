@@ -12,7 +12,11 @@ sidebar:
   - title: BlueXP 虛擬機器備份與還原文件
     url: "/index.html"
   - title: 版本資訊
-    url: "/whats-new.html"
+    entries:
+    - title: 新增功能
+      url: "/whats-new.html"
+    - title: 已知限制
+      url: "/reference-limitations.html"
   - title: 開始使用
     entries:
     - title: 瞭解適用於 VM 的 BlueXP 備份與還原
@@ -37,8 +41,22 @@ sidebar:
       url: "/task-create-resource-groups.html"
     - title: 隨需備份資源群組
       url: "/task-back-up-resource-groups-on-demand.html"
+  - title: 掛載及卸載資料存放區
+    entries:
+    - title: 裝載資料存放區
+      url: "/task-mount-datastores.html"
+    - title: 卸載資料存放區
+      url: "/task-unmount-datastores.html"
+  - title: 連接並卸除VMDK
+    entries:
+    - title: 將VMDK附加至VM
+      url: "/task-attach-vmdks-vm.html"
+    - title: 分離虛擬磁碟
+      url: "/task-detach-virtual-disks.html"
   - title: 從 Amazon FSX 還原虛擬機器
     url: "/task-restore-virtual-machines-from-amazon-fsx.html"
+  - title: 存取REST API
+    url: "/task-access-rest-apis.html"
   - title: 知識與支援
     entries:
     - title: 註冊以取得支援

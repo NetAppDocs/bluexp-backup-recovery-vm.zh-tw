@@ -17,7 +17,7 @@ summary: 您必須先建立備份原則、然後才能使用 BlueXP 備份與還
 * 您必須閱讀必備條件。
 * 您必須設定次要儲存關係。
 +
-** 如果您要將Snapshot複本複製到鏡射或保存庫的二線儲存設備、則必須設定關係、SnapCenter 且該管理員必須已將來源和目的地磁碟區的儲存VM指派給您。
+** 如果您要將 Snapshot 複本複製到鏡像或資料保險箱次要儲存設備、則必須設定關係、而且必須登錄來源和目的地磁碟區的儲存系統。
 ** 若要成功將 Snapshot 複本傳輸至 NFS 資料存放區上的 Verse-FlexibleMirror 關係次要儲存設備、請確定 SnapMirror 原則類型為 AsynAsynAsynous Mirror 、且已勾選「 all_source_snapshots 」選項。
 ** 當次要儲存設備（鏡射資料保險箱）上的 Snapshot 複本數量達到上限時、在備份作業中登錄備份及套用保留的活動會失敗、並出現下列錯誤：此 Snapshot 複本目前是以一或多個 SnapMirror 關係作為參考 Snapshot 複本。刪除 Snapshot 複本可能導致未來 SnapMirror 操作失敗。
 +
@@ -31,7 +31,9 @@ summary: 您必須先建立備份原則、然後才能使用 BlueXP 備份與還
 .步驟
 . 在 BlueXP 虛擬機器備份與還原的左導覽器窗格中、按一下 * 原則 * 。
 . 在 * 原則 * 頁面上、按一下 * 建立 * 以啟動精靈。
++
 image:vSphere client_policies.png[""]
+
 . 在 * 新備份原則 * 頁面上、選取要使用原則的 AWS 上的 VMC 、然後輸入原則名稱和說明。
 +
 ** 不支援的字元
@@ -40,10 +42,17 @@ image:vSphere client_policies.png[""]
 
 +
 允許使用底線字元（_）。
+
++
 image:New backup policy.png[""]
 
 
 
+. 指定頻率設定。
++
+原則僅指定備份頻率。備份的特定保護排程是在資源群組中定義。因此、兩個或多個資源群組可以共用相同的原則和備份頻率、但備份排程不同。
+
+. 如果您不想要修改 Snapshot 、請啟用 * Snapshot Locking * 並指定鎖定期間。
 . 指定保留設定。
 +
 [IMPORTANT]
@@ -51,10 +60,6 @@ image:New backup policy.png[""]
 如果您打算啟用SnapVault 還原複寫、則應將保留計數設為2個或更高。如果您將保留計數設為1個備份以保留、則保留作業可能會失敗。這是因為第一個Snapshot複本是SnapVault 參考Snapshot複本、用於建立關聯、直到將較新的Snapshot複本複寫到目標為止。
 
 ====
-. 指定頻率設定。
-+
-原則僅指定備份頻率。備份的特定保護排程是在資源群組中定義。因此、兩個或多個資源群組可以共用相同的原則和備份頻率、但備份排程不同。
-
 . 在* Replication *欄位中、指定複寫至次要儲存設備的類型、如下表所示：
 +
 [cols="50,50"]
@@ -68,11 +73,6 @@ image:New backup policy.png[""]
 選取此選項可在與主要備份磁碟區具有SnapMirror關係的另一個磁碟區上建立備份集的鏡射複本。
 如果磁碟區是以鏡射資料庫關係進行設定、SnapVault 則如果您想要將備份複製到鏡射資料庫目的地、則只能選取*更新待備份*選項。
 
-[NOTE]
-====
-此選項支援FlexGroup VMware vSphere 4.5及更新版本的VMware vSphere 4.5版的更新版本中、適用於VMware的VMware Infrastructure SnapCenter 外掛程式中的資料存放區。
-
-====
 
 
  a| 
@@ -83,11 +83,6 @@ image:New backup policy.png[""]
 [NOTE]
 ====
 如果磁碟區是以鏡射資料庫關聯進行設定、則只有當您想要將備份複製到鏡射資料庫目的地時、才必須選取此選項。
-
-====
-[NOTE]
-====
-此選項支援FlexGroup VMware vSphere 4.5及更新版本的VMware vSphere 4.5版的更新版本中、適用於VMware的VMware Infrastructure SnapCenter 外掛程式中的資料存放區。
 
 ====
 
@@ -123,7 +118,7 @@ VM一致性
 ====
 [NOTE]
 ====
-當您勾選VM一致性方塊時、備份作業可能需要更長時間、而且需要更多儲存空間。在此案例中、VM會先靜止、然後VMware執行VM一致的快照、SnapCenter 接著執行VMware的備份作業、然後恢復VM作業。
+當您勾選VM一致性方塊時、備份作業可能需要更長時間、而且需要更多儲存空間。在此案例中、 VM 會先停用、然後 VMware 會執行 VM 一致的快照、然後針對 VM 執行 BlueXP 備份與還原、接著恢復 VM 作業。
 
 ====
 VM客體記憶體不包含在VM一致性快照中。
@@ -140,7 +135,7 @@ VM客體記憶體不包含在VM一致性快照中。
  a| 
 指令碼
  a| 
-輸入您希望SnapCenter VMware外掛程式在備份作業之前或之後執行的預先記錄或PostScript完整路徑。例如、您可以執行指令碼來更新SNMP設陷、自動化警示及傳送記錄。指令碼路徑會在指令碼執行時驗證。
+輸入預先記錄或 PostScript 的完整路徑、您希望 BlueXP 備份和還原虛擬機器在備份作業之前或之後執行。例如、您可以執行指令碼來更新SNMP設陷、自動化警示及傳送記錄。指令碼路徑會在指令碼執行時驗證。
 
 [NOTE]
 ====

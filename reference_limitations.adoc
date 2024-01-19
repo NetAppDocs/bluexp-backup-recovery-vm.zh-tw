@@ -1,0 +1,19 @@
+---
+permalink: reference-limitations.html 
+sidebar: sidebar 
+keywords: limitations 
+summary: 在使用 BlueXP 備份和還原 VM 之前、您應該瞭解這些限制。 
+---
+= 已知限制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+已知限制指出本產品版本不支援的功能、或是無法與產品正確互通的功能。請仔細檢閱這些限制。
+
+* BlueXP 虛擬機器備份與還原不支援 Amazon FSX 進行 ONTAP 的自動每日備份。
+* 可掛載的資料存放區上限為四個。
+* 如果啟用快照鎖定、虛擬機器的 BlueXP 備份與還原會顯示二次次要位置。此問題已在 ONTAP 9.14.1RC1 、 ONTAP 9.13.1P4 - ONTAP 9.13.1P5 和 ONTAP 9.12.1P8 - ONTAP 9.12.1P9 中修正。
+

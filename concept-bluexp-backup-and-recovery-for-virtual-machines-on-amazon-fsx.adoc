@@ -2,7 +2,7 @@
 permalink: concept-bluexp-backup-and-recovery-for-virtual-machines-on-amazon-fsx.html 
 sidebar: sidebar 
 keywords: bluexp, backup, recovery, virtual machines, amazon fsx 
-summary: BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開放式虛擬應用裝置格式）、可為 AWS 上的 VMware Cloud 上的虛擬機器和資料存放區、以及適用於 NetApp ONTAP 的 Amazon FSX 提供資料保護服務。您可以使用 BlueXP 備份與還原來備份虛擬機器的資料存放區、並將虛擬機器還原至其原始位置。 
+summary: BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開放式虛擬應用裝置格式）、可為 AWS 上的 VMware Cloud 上的虛擬機器和資料存放區、以及適用於 NetApp ONTAP 的 Amazon FSX 提供資料保護服務。您可以使用 BlueXP 備份與還原來備份虛擬機器的資料存放區、並將虛擬機器和虛擬機器磁碟還原至其原始 / 替代位置。 
 ---
 = 適用於 Amazon FSX 上虛擬機器的 BlueXP 備份與還原
 :allow-uri-read: 
@@ -11,10 +11,10 @@ summary: BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開�
 
 
 [role="lead"]
-BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開放式虛擬應用裝置格式）、可為 AWS 上的 VMware Cloud 上的虛擬機器和資料存放區、以及適用於 NetApp ONTAP 的 Amazon FSX 提供資料保護服務。您可以使用 BlueXP 備份與還原來備份虛擬機器的資料存放區、並將虛擬機器還原至其原始位置。
+BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開放式虛擬應用裝置格式）、可為 AWS 上的 VMware Cloud 上的虛擬機器和資料存放區、以及適用於 NetApp ONTAP 的 Amazon FSX 提供資料保護服務。
 
 * 您只能備份 Amazon FSX 上的 NFS 類型資料存放區。
 * 您應該執行 ONTAP 9.10 或更新版本、以備份 NFS 資料存放區。
 * VMware Cloud 具有預先定義的「 CloudAdmin 」角色。CloudAdmin 角色擁有必要的權限、可建立及管理 SDDC 工作負載及相關物件、例如儲存原則、內容庫、 vSphere 標記及資源池。
-* 您可以將 VM 和 VMDK 還原至其目前位置（就地還原）。
+* 您可以將 VM 和 VMDK 還原至其目前 / 替代位置。
 

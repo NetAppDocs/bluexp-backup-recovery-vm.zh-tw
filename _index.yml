@@ -35,3 +35,5 @@ indexpage:
       url: https://www.youtube.com/watch?v=cLWOFm_3g3U
     - title: 還原 ONTAP 資料存放區 VM 和 VMDK 的 FSX
       url: https://www.youtube.com/watch?v=RVLYP0lguxkM
+    - title: 保護 Oracle 與 MS ® SQL 工作負載
+      url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Protect-Oracle-MS-SQL-workloads-using-NetApp-SnapCenter-in-VMware-Cloud-on-AWS/ba-p/449168

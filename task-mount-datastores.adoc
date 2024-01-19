@@ -1,0 +1,36 @@
+---
+permalink: task-mount-datastores.html 
+sidebar: sidebar 
+keywords: mount, datastores 
+summary: 裝載資料存放區可讓主機存取儲存設備。 
+---
+= 裝載資料存放區
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+若要存取備份中的檔案、您可以從備份掛載資料存放區。
+
+.開始之前
+* 請務必從 VMC 入口網站複製組織 ID 和 API Token 、並將其新增至 VMware Cloud Services 設定。
+* 確保備用ESXi主機可連線至儲存設備
++
+如果您想要掛載到替代的 ESXi 主機、則必須確保替代的 ESXi 主機可以連線到儲存設備、並且擁有與原始主機相同的 UID 和 GID 。
+
+
+
+.步驟
+. 在 VMware vSphere 用戶端中、瀏覽至 image:menu_icon.png[""] > * 庫存 * > * 儲存 * 。
+. 在左側瀏覽器窗格中、以滑鼠右鍵按一下資料存放區、然後在下拉式清單中選取 * BlueXP 虛擬機器備份與還原 * 、然後在次要下拉式清單中選取 * 掛載備份 * 。
+. 在 * 掛載資料存放區 * 頁面上、選取備份和備份位置（主要或次要）、然後按一下 * 掛載 * 。
+. 選用：若要確認資料存放區已掛載、請在 VMware vSphere 用戶端工具列中、按一下 * BlueXP 虛擬機器備份與還原 * 。
++
+您掛載的資料存放區會顯示在儀表板的 * 最近工作活動 * 磚中。
+
++
+若要防止在複製磁碟區時建立新的Snapshot複本、請關閉ONTAP 針對該磁碟區的更新排程。SnapVault先前存在的Snapshot複本不會刪除。
+
+

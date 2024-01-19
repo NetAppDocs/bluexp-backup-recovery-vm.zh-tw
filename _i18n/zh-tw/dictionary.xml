@@ -25,19 +25,14 @@
   <block id="8e76505b54822d8003db9695ebc8dded" category="doc">為VM和資料存放區建立備份原則</block>
   <block id="271beae8f11b01c3f45767fc1bd5c1a9" category="list-text">您必須閱讀必備條件。</block>
   <block id="020c68712d58d0c6ae79d6422851ae45" category="list-text">您必須設定次要儲存關係。</block>
-  <block id="06e3c2a5372f8d3d86877d169badf325" category="list-text">如果您要將Snapshot複本複製到鏡射或保存庫的二線儲存設備、則必須設定關係、SnapCenter 且該管理員必須已將來源和目的地磁碟區的儲存VM指派給您。</block>
   <block id="fe693831347b037af8a5d8babd163c2e" category="list-text">若要成功將 Snapshot 複本傳輸至 NFS 資料存放區上的 Verse-FlexibleMirror 關係次要儲存設備、請確定 SnapMirror 原則類型為 AsynAsynAsynous Mirror 、且已勾選「 all_source_snapshots 」選項。</block>
   <block id="b3f67a94ed7b9ba31bd2698489179f27" category="list-text">當次要儲存設備（鏡射資料保險箱）上的 Snapshot 複本數量達到上限時、在備份作業中登錄備份及套用保留的活動會失敗、並出現下列錯誤：此 Snapshot 複本目前是以一或多個 SnapMirror 關係作為參考 Snapshot 複本。刪除 Snapshot 複本可能導致未來 SnapMirror 操作失敗。</block>
   <block id="7cb7ec638ee3f628b5dd7b29b735054f" category="paragraph">若要修正此問題、請設定次要儲存設備的SnapMirror保留原則、以避免達到Snapshot複本的上限。</block>
   <block id="afb53cfa3120d45d1a3d76236dda1012" category="list-text">如果您想要VM一致的備份、則必須安裝並執行VMware工具。需要 VMware 工具來使虛擬機器處於不活動狀態。</block>
   <block id="1b29ba4e6cf39ab8317f76076c2baeed" category="list-text">在 BlueXP 虛擬機器備份與還原的左導覽器窗格中、按一下 * 原則 * 。</block>
-  <block id="2be9030b1634912139eaab40b3092dce" category="list-text">在 * 原則 * 頁面上、按一下 * 建立 * 以啟動精靈。
-<block ref="906916a1f3ea00481784d2dcf7dafe3d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f9537d47a4839ca02a4ca9726157e701" category="list-text">在 * 新備份原則 * 頁面上、選取要使用原則的 AWS 上的 VMC 、然後輸入原則名稱和說明。</block>
   <block id="9efc9e0c08da510b5195bb9dc4b1b7c2" category="list-text">不支援的字元</block>
   <block id="69a02b2d668a0ebee1d9ac100a00074c" category="paragraph">請勿在VM、資料存放區、叢集、原則、備份、 或資源群組名稱：%&amp;*$#@！\/：*？"&lt;&gt;-|；'、。</block>
-  <block id="9269e051e7bd31dcb56553a7f11183a2" category="paragraph">允許使用底線字元（_）。
-<block ref="6648fd21234a7ed16d280775be5d73d3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a923c6bf503ee78e9fc4b4479248cff6" category="list-text">指定保留設定。</block>
   <block id="2eff7650afc7423cc6df7c21eaaf0430" category="paragraph">如果您打算啟用SnapVault 還原複寫、則應將保留計數設為2個或更高。如果您將保留計數設為1個備份以保留、則保留作業可能會失敗。這是因為第一個Snapshot複本是SnapVault 參考Snapshot複本、用於建立關聯、直到將較新的Snapshot複本複寫到目標為止。</block>
   <block id="6e0b19728555d1c2b7bc98ce7895aced" category="list-text">指定頻率設定。</block>
@@ -48,7 +43,6 @@
   <block id="fa23470db7b9905492d6e4cdd14b03e5" category="paragraph">備份後更新SnapMirror</block>
   <block id="a7352564cfc3174fc18763ada4c4e33e" category="paragraph">選取此選項可在與主要備份磁碟區具有SnapMirror關係的另一個磁碟區上建立備份集的鏡射複本。
 如果磁碟區是以鏡射資料庫關係進行設定、SnapVault 則如果您想要將備份複製到鏡射資料庫目的地、則只能選取*更新待備份*選項。</block>
-  <block id="449ebe6b7b153c1de3b22c54152f11dd" category="paragraph">此選項支援FlexGroup VMware vSphere 4.5及更新版本的VMware vSphere 4.5版的更新版本中、適用於VMware的VMware Infrastructure SnapCenter 外掛程式中的資料存放區。</block>
   <block id="05c92158f412c4a911e0b21a09762bf2" category="paragraph">備份後更新SnapVault</block>
   <block id="7f7a2015d521bd1848a92d266cd3fae5" category="paragraph">選取此選項可在其他SnapVault 與主備份磁碟區有「深度」關係的磁碟對磁碟備份複寫。</block>
   <block id="ec9a0601ee927cc668ce79eac801b520" category="paragraph">如果磁碟區是以鏡射資料庫關聯進行設定、則只有當您想要將備份複製到鏡射資料庫目的地時、才必須選取此選項。</block>
@@ -60,12 +54,10 @@ Snapshot標籤有助於區分使用此原則建立的Snapshot與次要儲存系�
   <block id="a7ef08fff5cdd9899a1574f69f5c4428" category="paragraph">VM一致性</block>
   <block id="c5622748b0dae394073783566c4253de" category="paragraph">核取此方塊可在每次執行備份工作時、停止虛擬機器並建立VMware快照。</block>
   <block id="5fe139943a50a82fa435d79d3988038a" category="paragraph">您必須在VM上執行VMware工具、才能執行VM一致的備份。如果VMware Tools未執行、則會改為執行損毀一致的備份。</block>
-  <block id="d619892da7c9e176ad3a4bb3414fcef1" category="paragraph">當您勾選VM一致性方塊時、備份作業可能需要更長時間、而且需要更多儲存空間。在此案例中、VM會先靜止、然後VMware執行VM一致的快照、SnapCenter 接著執行VMware的備份作業、然後恢復VM作業。</block>
   <block id="fe8e8bb4e4841e4b613a335eb4397fa6" category="paragraph">VM客體記憶體不包含在VM一致性快照中。</block>
   <block id="5b5f807a09f098321a7b30d765219c05" category="paragraph">包括具有獨立磁碟的資料存放區</block>
   <block id="495ad64d2a6a40cfac27d689d4edd34b" category="paragraph">勾選此方塊、即可在備份中納入任何含有暫存資料的獨立磁碟資料存放區。</block>
   <block id="a83f1ca5ad00b39773d9e6a26b0e70b2" category="paragraph">指令碼</block>
-  <block id="38e0c62f029f528b565802759f84d383" category="paragraph">輸入您希望SnapCenter VMware外掛程式在備份作業之前或之後執行的預先記錄或PostScript完整路徑。例如、您可以執行指令碼來更新SNMP設陷、自動化警示及傳送記錄。指令碼路徑會在指令碼執行時驗證。</block>
   <block id="7e3f0e5af0f3deb2b599c2b06c202c37" category="paragraph">指令碼和指令碼必須位於虛擬應用裝置VM上。若要輸入多個指令碼、請在每個指令碼路徑後按 Enter 、將每個指令碼列在不同的一行上。不允許使用「；」字元。</block>
   <block id="0e966e38f37db4fe0a9b1d6f014e044c" category="paragraph">您可以在「原則」頁面中選取原則、以驗證原則是否已建立並檢閱原則組態。</block>
   <block id="0a5120b477a12d0b58555a4a46c5269c" category="summary">不支援的工作流程</block>
@@ -213,12 +205,10 @@ Snapshot標籤有助於區分使用此原則建立的Snapshot與次要儲存系�
   <block id="8ced16f68a9710f544fa07b75b031531" category="list-text">AWS 上的每個 VMC 都應與個別的 BlueXP 備份和恢復 VM 執行個體配對。</block>
   <block id="a0b8712c405e33c495bcbf0f2430f84e" category="list-text">每個 VM BlueXP 備份與還原執行個體都必須部署為獨立的 Linux VM 。</block>
   <block id="25950cd6c2e7c3d5805a7155cfa39e2a" category="paragraph">例如、如果您想要在 AWS 上執行六個不同 VMC 執行個體的備份、則必須在六個主機上部署六個 BlueXP 備份和還原、而且 AWS 上的每個 VMC 都必須與一個獨特的 BlueXP 備份和還原 VM 執行個體配對。</block>
-  <block id="2aa21a5ffa0dab32f9fd25622fcf534d" category="summary">BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開放式虛擬應用裝置格式）、可為 AWS 上的 VMware Cloud 上的虛擬機器和資料存放區、以及適用於 NetApp ONTAP 的 Amazon FSX 提供資料保護服務。您可以使用 BlueXP 備份與還原來備份虛擬機器的資料存放區、並將虛擬機器還原至其原始位置。</block>
   <block id="26a15d7986f1607a9f7daa4efd926c80" category="doc">適用於 Amazon FSX 上虛擬機器的 BlueXP 備份與還原</block>
   <block id="f5eab3d317d6c4d95063c4bb5c161509" category="list-text">您只能備份 Amazon FSX 上的 NFS 類型資料存放區。</block>
   <block id="2efffbafe41056b8a16eaa739e9b56e7" category="list-text">您應該執行 ONTAP 9.10 或更新版本、以備份 NFS 資料存放區。</block>
   <block id="32b36f1d8e8c3d59e6463ae39985c79f" category="list-text">VMware Cloud 具有預先定義的「 CloudAdmin 」角色。CloudAdmin 角色擁有必要的權限、可建立及管理 SDDC 工作負載及相關物件、例如儲存原則、內容庫、 vSphere 標記及資源池。</block>
-  <block id="94cc43cd13438a1a44297fe4d9e5a397" category="list-text">您可以將 VM 和 VMDK 還原至其目前位置（就地還原）。</block>
   <block id="243263104c829e77835d632f591230d5" category="summary">在您透過NetApp技術支援開啟支援案例之前、您必須先在NetApp 支援網站 BlueXP中新增一個支援帳戶、然後註冊以取得支援。</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">註冊以取得支援</block>
   <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">支援登錄總覽</block>
@@ -305,8 +295,6 @@ Snapshot標籤有助於區分使用此原則建立的Snapshot與次要儲存系�
   <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">社群</block>
   <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
   <block id="00c5fef3bb9d593ae96bf5d2ee60354a" category="paragraph">歡迎加入BlueXP社群、以追蹤後續討論或建立新討論。</block>
-  <block id="80b1b0d2b1ebf2b3cba2d25759801afd" category="list-text">mailto：ng-cloudmanager-feedback@netapp.com [意見反應電子郵件]</block>
-  <block id="6702efec14563f45f1ee2f8c613b8ad8" category="paragraph">我們非常重視您的意見。提交意見反應、協助我們改善藍圖。</block>
   <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">利用NetApp支援建立案例</block>
   <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">除了上述的自我支援選項、您也可以在啟動支援之後、與NetApp支援專家合作解決任何問題。</block>
   <block id="8fece025a1a8fef7018449bf104a2527" category="list-title">開始之前</block>
@@ -391,18 +379,14 @@ Snapshot標籤有助於區分使用此原則建立的Snapshot與次要儲存系�
   <block id="53cfd56b3608a4ed4c03e8e0c5caae45" category="paragraph">您無法還原資料存放區、但可以還原資料存放區中的任何虛擬機器。</block>
   <block id="6d7ec4cee1b0c4e3059a9c3d8bb71046" category="list-text">虛擬機器的 VMware 一致性快照失敗。</block>
   <block id="45ece8b1113e383b0e7e2917cb3d88a5" category="paragraph">即使虛擬機器的 VMware 一致性快照失敗、仍會備份虛擬機器。您可以在還原精靈中檢視備份複本中包含的實體、並將其用於還原作業。</block>
-  <block id="a638ca591549f6494bfb64fca964731b" category="list-text">在 VMware vSphere Web Client GUI 中、按一下工具列中的 * 功能表 * 、按一下 * 清查 * 、然後選取 * 虛擬機器和範本 * 。</block>
-  <block id="c22f3159395e7ce6c9a8b604106623f7" category="list-text">在左導覽器窗格中、以滑鼠右鍵按一下 * 虛擬機器 * 、然後在下拉式清單中選取 * NetApp 雲端備份 * 、然後選取 * 還原 * 以啟動精靈。</block>
   <block id="de43308fec906273acd64a6aed609cb8" category="list-text">在*還原*精靈的*選取備份*頁面上、選取您要還原的備份Snapshot複本。</block>
   <block id="43bf8720e765e5ec5249782941ceb574" category="paragraph">您可以搜尋特定的備份名稱或部分備份名稱、也可以按一下篩選器圖示並選取日期和時間範圍來篩選備份清單、選取是否要包含VMware Snapshot的備份、是否要掛載備份以及位置。按一下「*確定*」以返回精靈。</block>
-  <block id="664749414cf1bca3f1fd4f2bfac452d3" category="list-text">在 * 選取範圍 * 頁面上、在 * 還原範圍 * 欄位中選取 * 整個虛擬機器 * 、然後選取還原位置、然後輸入要掛載備份的目的地 ESXi 資訊。</block>
   <block id="9d7f2f9bd72cb1eb66d906abadf682b1" category="paragraph">還原部分備份時、還原作業會跳過「*選取範圍*」頁面。</block>
   <block id="4a501b597bd4167c209d8bdff7aa576e" category="list-text">如果您希望在還原作業之後開啟虛擬機器電源、請啟用 * 重新啟動 VM* 核取方塊。</block>
   <block id="de179e769f37bceb37b99454fcd0fc9f" category="list-text">在「*選取位置*」頁面上、選取還原資料存放區的位置。</block>
   <block id="fca1924bee8a7a6fbfd8c512efe56373" category="list-text">檢閱 * 摘要 * 頁面、然後按一下 * 完成 * 。</block>
   <block id="ba4e58f4bc0a74931646cad754c7a04b" category="list-text">* 選用 * ：按一下畫面底部的 * 最近工作 * 來監控作業進度。</block>
   <block id="5fc34c96a53e88e10cd1df77a72005f4" category="list-text">將還原的虛擬機器新增至資源群組。</block>
-  <block id="a1c0ec7f7265d7d6dfdfe38fee9792ba" category="paragraph">雖然虛擬機器已還原、但不會自動新增至先前的資源群組。因此、您必須手動將還原的虛擬機器新增至適當的資源群組。</block>
   <block id="a6fc5033cd7d2f5d0e979c35a6273cb2" category="sidebar">BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開放式虛擬應用裝置格式）、可為 AWS 上的 VMware Cloud 上的虛擬機器和資料存放區、以及適用於 NetApp ONTAP 的 Amazon FSX 提供資料保護服務。</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
   <block id="d371b3e46ec1452b89412f2da008cb64" category="sidebar">瞭解適用於 VM 的 BlueXP 備份與還原</block>
@@ -456,4 +440,108 @@ Snapshot標籤有助於區分使用此原則建立的Snapshot與次要儲存系�
   <block id="6bfaca7cf08b162bbacdc9479a2ca693" category="list-text">在 AWS 主控台上、您必須更新執行 FSX for ONTAP 的 VPC 安全性群組、以允許虛擬機器進行 BlueXP 備份與還原、存取適用於 ONTAP 的 FSX 。</block>
   <block id="852604ac38f959dae2ec3b3009d3fc07" category="paragraph">若要保護虛擬機器上的 VM 和資料存放區、您必須為 VM 部署 BlueXP 備份和還原。</block>
   <block id="ebfc4f565cf4b541e8d94e4baad23f9f" category="list-text">您必須將 BlueXP 備份與還原部署在與 vCenter 相同的時區中、以供虛擬機器使用。</block>
+  <block id="f96fc24033e8d605c26d6a193ece4735" category="summary">卸載資料存放區會移除主機對儲存設備的存取權。</block>
+  <block id="39d50f244e1868cb8a2b803c9636bc01" category="doc">卸載資料存放區</block>
+  <block id="3cd20156fa10057c7f84a9e13d691b32" category="paragraph">當您不再需要存取資料存放區中的檔案時、可以卸載備份。</block>
+  <block id="c4b336e25d1d76223f7be8ec67116ae1" category="list-text">在 VMware vSphere 用戶端中、瀏覽至 <block ref="2c7a3a063e070bff2c7013040c629ab6" category="inline-image-macro-rx" type="image"></block> &gt; * 庫存 * &gt; * 儲存 * 。</block>
+  <block id="ea4aa728420cdbc4e91f43d8f208a387" category="list-text">在左側瀏覽器窗格中、以滑鼠右鍵按一下資料存放區、然後在下拉式清單中選取 * BlueXP 虛擬機器備份與還原 * 、然後在次要下拉式清單中選取 * Unmount* 。</block>
+  <block id="e68d40414316869d2023656b071a3cc1" category="admonition">請確定您選取要卸載的正確資料存放區。否則、您可能會對正式作業工作造成影響。</block>
+  <block id="d037dda36a87414a61863f9819373352" category="list-text">在 * 卸載備份 * 對話方塊中、選取資料存放區、選取 * 卸載資料存放區 * 核取方塊、然後按一下 * 卸載 * 。</block>
+  <block id="2d0f1b3171ada6a708622495820dc6ca" category="list-text">選用：若要確認資料存放區已卸載、請在 VMware vSphere 用戶端工具列中、按一下 * BlueXP VMS* 備份與還原。</block>
+  <block id="2c93911421766329f252684e3f3e6a9a" category="paragraph">您卸載的資料存放區會顯示在儀表板的 * 最近工作活動 * 磚中。</block>
+  <block id="d6c2cf7a5e232dbc0143ea4754644660" category="paragraph">您可以將VM還原至下列位置：</block>
+  <block id="abfc7c0c366258e23e15cd12a5f89811" category="list-text">還原至原始位置</block>
+  <block id="b14e0e0fe870958315bd1b702bfa088a" category="list-text">安裝在原始ESXi主機上的原始資料存放區（這會覆寫原始VM）</block>
+  <block id="25e66e51214e8342374fa891a42988b3" category="list-text">還原至替代位置</block>
+  <block id="de3711ff558e3312b6d68350183b2c3f" category="list-text">安裝在原始ESXi主機上的不同資料存放區</block>
+  <block id="bed9956f25b8fb4ba78345f151a537d8" category="list-text">安裝在不同ESXi主機上、由同一個vCenter管理的原始資料存放區</block>
+  <block id="27657d207d680aabbb0436d2a26f9fb5" category="list-text">安裝在不同ESXi主機上、由同一個vCenter管理的不同資料存放區</block>
+  <block id="f3e1d3164ec8218a6bb15fb425baca03" category="list-text">安裝在不同ESXi主機上的不同資料存放區、由不同vCenter以連結模式管理</block>
+  <block id="64fc816481e420ca3dd15e834108d01c" category="list-text">在 VMware vSphere 用戶端工具列中、按一下 * 主機與叢集 * 、然後選取儲存系統。</block>
+  <block id="b7604f0251d8cb7b20bb46387d4fa112" category="list-text">在左側的 Navigator （導航器）窗格中，右鍵單擊 * 虛擬機 * ，然後在下拉列表中選擇 *BlueXP 虛擬機備份和恢復 * ，然後選擇 *Restore* 啓動該向導。</block>
+  <block id="5fcf3e820d970b3b51da55a74053bff4" category="list-text">在 * 選取範圍 * 頁面上、在 * 還原範圍 * 欄位中選取 * 整個虛擬機器 * 、然後選取還原位置、然後輸入備份應裝載的目的地資訊。</block>
+  <block id="d1b4b1cd20ab56951a39c9cd9ce19c90" category="paragraph">在 VM 名稱欄位中、如果存在相同的 VM 名稱、則新的 VM 名稱格式為「 &lt;vm_name&gt; &lt;timestamp&gt; 」。</block>
+  <block id="877b234cb8dde57dd3552ee0fa6dd068" category="paragraph">確保新還原的 VM 受到保護。如果沒有、請手動將還原的 VM 新增至適當的資源群組、以保護它。</block>
+  <block id="3033609d5306603608d735baccf4bd2b" category="list-text">如果您要將 Snapshot 複本複製到鏡像或資料保險箱次要儲存設備、則必須設定關係、而且必須登錄來源和目的地磁碟區的儲存系統。</block>
+  <block id="8878994197a1eb014f3822817736fcb9" category="list-text">在 * 原則 * 頁面上、按一下 * 建立 * 以啟動精靈。</block>
+  <block id="906916a1f3ea00481784d2dcf7dafe3d" category="paragraph"><block ref="906916a1f3ea00481784d2dcf7dafe3d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a051f3eeac4a83ec1f5d55c7aeba6f06" category="paragraph">允許使用底線字元（_）。</block>
+  <block id="6648fd21234a7ed16d280775be5d73d3" category="paragraph"><block ref="6648fd21234a7ed16d280775be5d73d3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="22ddbe0d13874b1cf1816994bfb92854" category="list-text">如果您不想要修改 Snapshot 、請啟用 * Snapshot Locking * 並指定鎖定期間。</block>
+  <block id="4407de106f219fb35e16ce58d30ce466" category="paragraph">當您勾選VM一致性方塊時、備份作業可能需要更長時間、而且需要更多儲存空間。在此案例中、 VM 會先停用、然後 VMware 會執行 VM 一致的快照、然後針對 VM 執行 BlueXP 備份與還原、接著恢復 VM 作業。</block>
+  <block id="aa187ea824295bae24279cd87aa6279e" category="paragraph">輸入預先記錄或 PostScript 的完整路徑、您希望 BlueXP 備份和還原虛擬機器在備份作業之前或之後執行。例如、您可以執行指令碼來更新SNMP設陷、自動化警示及傳送記錄。指令碼路徑會在指令碼執行時驗證。</block>
+  <block id="eea84aa4972695e692e8e0af29506317" category="section-title">2024 年 1 月 18 日</block>
+  <block id="c454b492adb20af990d3eb80d9725024" category="section-title">增強了虛擬機器的 BlueXP 備份與還原功能</block>
+  <block id="88296380f7b22200bdb3a792027dbfba" category="paragraph">以下是適用於 VM 1.1 的 BlueXP 備份與還原所支援的功能：</block>
+  <block id="20573cc6d2bbd67be6c8a0862fe019b1" category="list-text">將虛擬機器還原至其他位置</block>
+  <block id="e6c57d58792f45f044a6326df3ec9b9a" category="list-text">啟用 Snapshot 鎖定、確保 Snapshot 複本在指定時間之前不會遭到竄改。</block>
+  <block id="e69ce0a516b6d7c2380f82c696ffdc01" category="summary">BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開放式虛擬應用裝置格式）、可為 AWS 上的 VMware Cloud 上的虛擬機器和資料存放區、以及適用於 NetApp ONTAP 的 Amazon FSX 提供資料保護服務。您可以使用 BlueXP 備份與還原來備份虛擬機器的資料存放區、並將虛擬機器和虛擬機器磁碟還原至其原始 / 替代位置。</block>
+  <block id="e5b0b42f445b647df62d6e378f8c71ec" category="list-text">您可以將 VM 和 VMDK 還原至其目前 / 替代位置。</block>
+  <block id="03a12a6e6ba231b7d5d26aa91ab1c483" category="summary">裝載資料存放區可讓主機存取儲存設備。</block>
+  <block id="465833e93b7ab22dbb9e82189b3e9e87" category="doc">裝載資料存放區</block>
+  <block id="e9556d2cd2c6ff28b597944a3b785e8e" category="paragraph">若要存取備份中的檔案、您可以從備份掛載資料存放區。</block>
+  <block id="2a38ae4c83d289abb42511affbb07bf4" category="list-text">請務必從 VMC 入口網站複製組織 ID 和 API Token 、並將其新增至 VMware Cloud Services 設定。</block>
+  <block id="482372f5186290234c8109307262c7be" category="list-text">確保備用ESXi主機可連線至儲存設備</block>
+  <block id="cec76647343575fe6b9cf1128e302531" category="paragraph">如果您想要掛載到替代的 ESXi 主機、則必須確保替代的 ESXi 主機可以連線到儲存設備、並且擁有與原始主機相同的 UID 和 GID 。</block>
+  <block id="36ac03001da28a77e53d1f4a7952232b" category="list-text">在左側瀏覽器窗格中、以滑鼠右鍵按一下資料存放區、然後在下拉式清單中選取 * BlueXP 虛擬機器備份與還原 * 、然後在次要下拉式清單中選取 * 掛載備份 * 。</block>
+  <block id="4c0655114e99963e8ddb74fda03d0cfd" category="list-text">在 * 掛載資料存放區 * 頁面上、選取備份和備份位置（主要或次要）、然後按一下 * 掛載 * 。</block>
+  <block id="455924390ea1901df9e61972f8625d0b" category="list-text">選用：若要確認資料存放區已掛載、請在 VMware vSphere 用戶端工具列中、按一下 * BlueXP 虛擬機器備份與還原 * 。</block>
+  <block id="e5310669f868395e66162957e92eca88" category="paragraph">您掛載的資料存放區會顯示在儀表板的 * 最近工作活動 * 磚中。</block>
+  <block id="88beb2e51cd0b895e36e8a71f5ddd38c" category="paragraph">若要防止在複製磁碟區時建立新的Snapshot複本、請關閉ONTAP 針對該磁碟區的更新排程。SnapVault先前存在的Snapshot複本不會刪除。</block>
+  <block id="dcf94d150ec9b7aa351d3e16a1ec3ba4" category="summary">執行這些步驟以存取其餘 API 。</block>
+  <block id="aba5f0a683edf4f29d2940f278f2d102" category="doc">使用Swagger API網頁存取REST API</block>
+  <block id="968e6c7f8992185c40c92b74c5a315cf" category="paragraph">REST API會透過Swagger網頁公開。您可以存取 Swagger 網頁、以顯示 VM REST API 的 BlueXP 備份與還原。</block>
+  <block id="f3ec2c5138898d84ec08804d9dcdd9ad" category="paragraph">對於 VM REST API 的 BlueXP 備份與還原、您必須知道 VM 應用裝置的 BlueXP 備份與還原的 IP 位址或主機名稱。</block>
+  <block id="061c36e9d3e7d9f981cf79561c7144ed" category="admonition">外掛程式僅支援REST API、以與協力廠商應用程式整合、不支援PowerShell Cmdlet或CLI。</block>
+  <block id="52db7b85d2725f40516c0dbc0da17ca6" category="list-text">從瀏覽器輸入URL、以存取外掛程式Swagger網頁：</block>
+  <block id="072db018962874e15c5db8115caf16b2" category="paragraph"><block ref="a0238ff2a353c960ac459ebcb9a9ea42" category="inline-link-rx"></block></block>
+  <block id="b8ae0b462402a081bf316840fb878f9e" category="admonition">請勿在REST API URL中使用下列字元：+、。、%和&amp;。</block>
+  <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">* 範例 *</block>
+  <block id="7279be9bb03d1390b3ea8dfa85feb320" category="paragraph">存取虛擬機器 REST API 的 BlueXP 備份與還原：</block>
+  <block id="80ad72a4cb203d4379ce7f08e911bc19" category="paragraph"><block ref="2c783b3b5dbe20b878f13c43894996ce" category="inline-link-rx"></block></block>
+  <block id="a23affc3c3582aef164dcc126289abc5" category="paragraph">登入使用vCenter驗證機制來產生權杖。</block>
+  <block id="9ce66f05fe7909f94e1823660b617ddf" category="list-text">按一下API資源類型、以該資源類型顯示API。</block>
+  <block id="e25f9b9a6d51c291f229ba4ce1ef934b" category="summary">將一個以上的 VMDK 附加到 VM 。</block>
+  <block id="7da61cf8aa5a3e11b9b2b76cf8de6c2b" category="doc">將VMDK附加至VM</block>
+  <block id="6d2c0b899729f6fc65bb750388bf7304" category="paragraph">您可以將一個或多個VMDK從備份附加至父VM、或附加至同一ESXi主機上的替代VM、或附加至由同一vCenter管理的替代ESXi主機上的替代VM、或以連結模式附加至不同vCenter。</block>
+  <block id="45a22ef9ae5f0580d5230dd9bc8f0c63" category="paragraph">這使得從磁碟機還原一或多個個別檔案變得更容易、而非還原整個磁碟機。您可以在還原或存取所需的檔案之後、將VMDK分離。</block>
+  <block id="ef4f40abdcac7cd05cedfa75a38ecb05" category="paragraph">您有下列附加選項：</block>
+  <block id="3bd14151460ab96902cfa334d8e5b073" category="list-text">您可以從主要或次要備份附加虛擬磁碟。</block>
+  <block id="756f4f9493de655e73ea3ceedd07bf51" category="list-text">您可以將虛擬磁碟附加至父VM（虛擬磁碟最初與之相關聯的VM）、或附加至同一ESXi主機上的替代VM。</block>
+  <block id="8d3d48b6a47491763c9812ffa0ff2048" category="paragraph">下列限制適用於附加虛擬磁碟：</block>
+  <block id="19e4cacb6df1b0170d26c2a90c4be6b0" category="list-text">虛擬機器範本不支援附加和分離作業。</block>
+  <block id="2efd02ae05ecf109e4f1c3753ec07584" category="list-text">當超過 15 個 VMDK 連接到 iSCSI 控制器時、用於 BlueXP 備份和 VM 恢復的虛擬機器無法找到高於 15 的 VMDK 單元編號、因為 VMware 的限制。</block>
+  <block id="0a1c13cb7f3a6f85002911ef724d47ba" category="paragraph">在此情況下、請手動新增SCSI控制器、然後再次嘗試附加作業。</block>
+  <block id="02067153d760664147d364495bc1d86d" category="list-text">連接與還原作業會使用預設的SCSI控制器來連接VMDK。將連接至具有NVMe控制器之VM的VMDK備份、但為了附加和還原作業、它們會使用SCSI控制器連回。</block>
+  <block id="278e4864ce5f71db27c5e68928088836" category="list-text">在 VMware vSphere 用戶端中、瀏覽至 <block ref="2c7a3a063e070bff2c7013040c629ab6" category="inline-image-macro-rx" type="image"></block> &gt; * 庫存 * &gt; * 主機與叢集 * 。</block>
+  <block id="bcedd2e314a87392acbcde7ec5b98fbb" category="list-text">在左側瀏覽器窗格中，右鍵單擊 * 虛擬機 * ，然後在下拉列表中選擇 * BlueXP 虛擬機的備份和恢復 * ，然後選擇 * 附加虛擬磁盤 * 。</block>
+  <block id="5929be7ebf476e33b9ad3aea37fa87db" category="list-text">在 Attach Virtual Disk （附加虛擬磁碟）視窗的 * Backup （ * 備份）區段 * 中、選取備份。</block>
+  <block id="f29ee91ad0dce3a499c44ec0016398eb" category="paragraph">您可以選取篩選器圖示並選擇日期和時間範圍、選取是否要包含 VMware Snapshot 複本的備份、是否要掛載備份、以及位置、來篩選備份清單。按一下「確定」。</block>
+  <block id="775753d105c5c21b1080c5ea812205ff" category="list-text">在* Select Disks*（選擇磁碟）區段中、選取您要附加的一或多個磁碟、以及您要附加的位置（主要或次要）。</block>
+  <block id="0ccbe2c092fc378c75aa9ebb7bd7d5ab" category="paragraph">您可以變更篩選條件以顯示主要和次要位置。</block>
+  <block id="99721936171b079bed2194af73a3e943" category="list-text">根據預設、所選的虛擬磁碟會附加至父VM。若要將選取的虛擬磁碟附加到同一 ESXi 主機中的替代 VM 、 * 按一下「按一下這裡」以附加到替代 VM* 、並指定替代 VM 。</block>
+  <block id="2f80c7c6141a4d837c0d3b3d563d7ec1" category="list-text">按一下*附加*。</block>
+  <block id="3a258a61f1abdb721cb6de8642d42eb3" category="list-text">選用：在「*近期工作*」區段中監控作業進度。</block>
+  <block id="14dae1427bcb2f84e900779dbbccd66f" category="paragraph">重新整理畫面以顯示更新的資訊。</block>
+  <block id="c8d1e2af1ae3c89145fae7a06f3527d2" category="list-text">執行下列步驟、確認虛擬磁碟已附加：</block>
+  <block id="2b47e47a91e8d341f2ea5083a977170c" category="list-text">按一下工具列中的*功能表*、然後從下拉式清單中選取* VM和範本*。</block>
+  <block id="dd185a0a59b8b49a3a96be6de1271479" category="list-text">在左側導覽器窗格中、以滑鼠右鍵按一下VM、然後在下拉式清單中選取*編輯設定*。</block>
+  <block id="53458ddf4cca411e8218b9e8a4d2abea" category="list-text">在*編輯設定*視窗中、展開每個硬碟的清單以查看磁碟檔案清單。</block>
+  <block id="d179ad7e63e6982bb3ee3c16224d9dd1" category="paragraph">「編輯設定」頁面會列出VM上的磁碟。您可以展開每個硬碟的詳細資料、以查看附加虛擬磁碟的清單。</block>
+  <block id="6f629cc9e935a4af9aee9b4e5b3249df" category="paragraph">* 結果 * ：
+您可以從主機作業系統存取附加的磁碟、然後從磁碟擷取所需的資訊。</block>
+  <block id="90c46daf091476d4abbd6c115c9d683f" category="summary">在使用 BlueXP 備份和還原 VM 之前、您應該瞭解這些限制。</block>
+  <block id="482723983a4f2af954e36ff41e567451" category="doc">已知限制</block>
+  <block id="5d8aef9555e5438ddeff623786db2956" category="paragraph">已知限制指出本產品版本不支援的功能、或是無法與產品正確互通的功能。請仔細檢閱這些限制。</block>
+  <block id="47a0bf38b0e7cc54e0a0ff1bef23a9e7" category="list-text">BlueXP 虛擬機器備份與還原不支援 Amazon FSX 進行 ONTAP 的自動每日備份。</block>
+  <block id="a6c661857bb9faf4d1d2121855e170ac" category="list-text">可掛載的資料存放區上限為四個。</block>
+  <block id="8c5ce72a53d4aa7bc5c8cbb67cf764b1" category="list-text">如果啟用快照鎖定、虛擬機器的 BlueXP 備份與還原會顯示二次次要位置。此問題已在 ONTAP 9.14.1RC1 、 ONTAP 9.13.1P4 - ONTAP 9.13.1P5 和 ONTAP 9.12.1P8 - ONTAP 9.12.1P9 中修正。</block>
+  <block id="656b1941061949fe21d495b2d2fa4764" category="doc">分離虛擬磁碟</block>
+  <block id="6fc948db6bfb5ca3b3b32b543334051c" category="paragraph">附加虛擬磁碟以還原個別檔案之後、即可將虛擬磁碟與父VM分離。</block>
+  <block id="ab952ab9a747427147b3f05f314b597d" category="list-text">在左側瀏覽器窗格中，右鍵單擊 * 虛擬機 * ，然後在下拉列表中選擇 * BlueXP 虛擬機的備份和恢復 * ，然後選擇 * 分離虛擬磁盤 * 。</block>
+  <block id="22a57baae518fd2d4ed143d6b95d5f38" category="list-text">在 *Detach Virtual Disk* （分離虛擬磁盤 * ）對話框中，選擇一個或多個要分離的磁盤，然後選中 *Detach the selected disk(s)* （分離選定的磁盤 * ）複選框，然後單擊 *Detach* （分離 * ）。</block>
+  <block id="bbdcfd9257f4afda91a64894f3ae3263" category="list-text">執行下列步驟、確認虛擬磁碟已分離：</block>
+  <block id="fa8d7e4bdd9c439bca012f3548cbda0b" category="sidebar">保護 Oracle 與 MS ® SQL 工作負載</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
+  <block id="56221c5b2b531b839a3cd5c7e9c9cd9f" category="sidebar">存取REST API</block>
 </blocks>

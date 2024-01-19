@@ -1,0 +1,29 @@
+---
+permalink: task-unmount-datastores.html 
+sidebar: sidebar 
+keywords: mount, datastores 
+summary: 卸載資料存放區會移除主機對儲存設備的存取權。 
+---
+= 卸載資料存放區
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+當您不再需要存取資料存放區中的檔案時、可以卸載備份。
+
+.步驟
+. 在 VMware vSphere 用戶端中、瀏覽至 image:menu_icon.png[""] > * 庫存 * > * 儲存 * 。
+. 在左側瀏覽器窗格中、以滑鼠右鍵按一下資料存放區、然後在下拉式清單中選取 * BlueXP 虛擬機器備份與還原 * 、然後在次要下拉式清單中選取 * Unmount* 。
++
+
+NOTE: 請確定您選取要卸載的正確資料存放區。否則、您可能會對正式作業工作造成影響。
+
+. 在 * 卸載備份 * 對話方塊中、選取資料存放區、選取 * 卸載資料存放區 * 核取方塊、然後按一下 * 卸載 * 。
+. 選用：若要確認資料存放區已卸載、請在 VMware vSphere 用戶端工具列中、按一下 * BlueXP VMS* 備份與還原。
++
+您卸載的資料存放區會顯示在儀表板的 * 最近工作活動 * 磚中。
+
+
