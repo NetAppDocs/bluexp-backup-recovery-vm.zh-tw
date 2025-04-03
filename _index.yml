@@ -1,5 +1,9 @@
 ---
 indexpage:
+  title: BlueXP 虛擬機器備份與還原文件
+  summary: 適用於 Amazon FSX 上虛擬機器的 BlueXP 備份與還原。
+  keywords: bluexp backup and recovery for VMs documentation, Deploy, BlueXP, backup,
+    recovery, OVA, storage, Demos, tutorials
   lead: BlueXP 虛擬機器備份與還原是獨立式虛擬應用裝置（開放式虛擬應用裝置格式）、可為 AWS 上的 VMware Cloud 上的虛擬機器和資料存放區、以及適用於
     NetApp ONTAP 的 Amazon FSX 提供資料保護服務。
   tiles:
@@ -30,10 +34,10 @@ indexpage:
   - title: 示範與教學課程
     links:
     - title: 為 VM 安裝 BlueXP 備份與還原
-      url: https://www.youtube.com/watch?v=kCuKY0fBf5U
+      url: https://www.youtube.com/watch?v=senCAisw5VQ
     - title: 備份 ONTAP 資料存放區和 VM 的 FSX
-      url: https://www.youtube.com/watch?v=cLWOFm_3g3U
+      url: https://www.youtube.com/watch?v=NUFRkfnhQNk
     - title: 還原 ONTAP 資料存放區 VM 和 VMDK 的 FSX
-      url: https://www.youtube.com/watch?v=RVLYP0lguxkM
+      url: https://www.youtube.com/watch?v=Wk8q-vJ3TIg
     - title: 保護 Oracle 與 MS ® SQL 工作負載
       url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Protect-Oracle-MS-SQL-workloads-using-NetApp-SnapCenter-in-VMware-Cloud-on-AWS/ba-p/449168
